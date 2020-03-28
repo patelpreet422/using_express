@@ -1,0 +1,33 @@
+let express = require('express');
+let app = express();
+const PORT = 8080;
+
+app.get("/", (req, res) => {
+  res.send("hello world");
+});
+
+app.listen(PORT);
+
+/* What is middleware? 
+   Express is routing and middleware based minimal framework.
+   An express application is series of middleware function calls.
+   Middleware is simply a function that has access to both req, res object and third parameter is the next middleware.
+*/
+
+/* How to make custom middleware?
+   function middle_ware(req, res, next) {
+      // do stuff
+      next();
+   }
+*/
+
+/* What middleware can do?
+   Middleware can execute any piece of code.
+   Modify the req and res object.
+   End the request-response cycle.            (By not calling next())
+   Call next middleware in the stack.
+*/
+
+/* serving static file using express */
+
+app.use('');
